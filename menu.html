@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+       
+            min-height: 100vh;
+            background: linear-gradient(to bottom right, #1a1a2e, #16213e);
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            opacity: 0;
+            color: #f1f1f1;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            opacity: 0;
+            color: #c7c7c7;
+        }
+
+        .button-container {
+            margin-top: 20px;
+            opacity: 0;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            font-size: 1rem;
+            color: #16213e;
+            background: #e0e0e0;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:hover {
+            background: #a8a8a8;
+            transform: scale(1.05);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .menu-toggle.active {
+            transform: rotate(180deg);
+            color: red;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff4c4c;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                right: 10%;
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 20px;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                text-align: center;
+                padding: 20px 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .carousel {
+            width: 80%;
+            max-width: 600px;
+            overflow: hidden;
+            border-radius: 10px;
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background 0.3s;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+        }
+    </style>
+</head>
+<body>
+    <span class="menu-toggle" id="menuToggle">☰</span>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Sobre Nosotros</a></li>
+        <li><a href="#">Contacto</a></li>
+    </ul>
+    
+    <div class="carousel">
+        <button class="carousel-btn prev" onclick="prevSlide()">&#10094;</button>
+        <div class="carousel-container" id="carousel">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjx64E-WUfrPI-o6Af0dCimbVToOdhV-syUA&s" alt="Slide 1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyRujrVSVQoVOqHmzXDZDpjOeSn4IGmTKAzw&s" alt="Slide 2">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj03uwx_8On6tWZDf7zwm9n3S42UAyP0pUhg&s" alt="Slide 3">
+        </div>
+        <button class="carousel-btn next" onclick="nextSlide()">&#10095;</button>
+    </div>
+
+    <script>
+
+let currentIndex = 0;
+        function updateCarousel() {
+            const carousel = document.getElementById('carousel');
+            const width = document.querySelector('.carousel img').clientWidth;
+            carousel.style.transform = `translateX(${-currentIndex * width}px)`;
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % 3;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + 3) % 3;
+            updateCarousel();
+        }
+
+        gsap.to("#title", { opacity: 1, y: -10, duration: 1 });
+        gsap.to("#description", { opacity: 1, y: -10, duration: 1, delay: 0.5 });
+        gsap.to("#buttonContainer", { opacity: 1, scale: 1, duration: 0.8, delay: 1 });
+        
+
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.getElementById('menuToggle');
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        }
+
+        document.getElementById('menuToggle').addEventListener('click', toggleMenu);
+        
+        gsap.to("#title", { opacity: 1, y: -10, duration: 1 });
+        gsap.to("#description", { opacity: 1, y: -10, duration: 1, delay: 0.5 });
+        gsap.to("#buttonContainer", { opacity: 1, scale: 1, duration: 0.8, delay: 1 });
+    </script>
+</body>
+</html>

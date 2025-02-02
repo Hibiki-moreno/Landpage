@@ -28,6 +28,7 @@ p {
     font-size: 1.2rem;
     margin-top: 10px;
     opacity: 0;
+    color:#e2e8f0;
 }
 
 .button-container {
@@ -78,6 +79,7 @@ p {
     display: grid;
     justify-content: center;
     place-content: center;
+    background-size: cover;
 }
 
 .nav{

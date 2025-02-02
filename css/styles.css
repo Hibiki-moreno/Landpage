@@ -37,6 +37,7 @@ p {
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s;
+    z-index: 9;
 }
 
 .btn:hover {

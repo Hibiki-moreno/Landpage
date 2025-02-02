@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom right, #1a1a2e, #16213e);
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .swiper {
+            width: 80%;
+            max-width: 600px;
+            margin-top: 30px;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD-HUSdgo22RcXTs-9n-yQQ7pS9YrIB2uxrA&s" alt="Slide 1"></div>
+            <div class="swiper-slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS6Mf5urpoYwnWaBjvrJ8ykPjcYeZaPO9Yng&s" alt="Slide 2"></div>
+            <div class="swiper-slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpGBFw2qen_Y6TS8ALbVpKpVMuhFqF6Gtm6A&s" alt="Slide 3"></div>
+        </div>
+   
+    </div>
+
+    <script>
+        let grid;
+       function getEffect() {
+            return window.innerWidth <= 768 ? 'cube' : 'coverflow';
+            
+            
+        }
+        function getGrid(){
+
+          return  window.innerWidth <= 768 ? 1 : 2;
+
+        }
+        
+
+        let swiper = new Swiper(".mySwiper", {
+            effect: getEffect(),
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerViewL:getGrid(),
+            loop: dddddd,
+            pagination: { el: ".swiper-pagination", clickable: true },
+
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            cubeEffect: {
+                shadow: true,
+                slideShadows: true,
+                shadowOffset: 20,
+                shadowScale: 0.94,
+            }
+        });
+
+        window.addEventListener("resize", () => {
+            swiper.destroy(true, true);
+            swiper = new Swiper(".mySwiper", { ...swiper.params, effect: getEffect() });
+        });
+    </script>
+</body>
+</html>

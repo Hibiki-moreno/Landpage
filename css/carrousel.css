@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #1a1a2e, #16213e);
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.swiper {
+    width:50%;
+    max-width: 400px;
+    margin-top: 30px;
+}
+.swiper-slide img {
+    width: 100%;  /* Hace que todas las imágenes ocupen el ancho del slide */
+    height: 250px; /* Ajusta la altura fija para que todas sean iguales */
+    
+    border-radius: 10px; /* Opcional: Bordes redondeados */
+}
+
+.gallery-container {
+    margin-top: 20px;
+    width: 80%;
+    max-width: 600px;
+}
+
+.swiper-gallery {
+    width: 100%;
+    height: 300px;
+}
+
+.swiper-thumbs {
+    width: 100%;
+    height: 100px;
+    top: 0;
+}
+
+.swiper-thumbs .swiper-slide {
+    width: 100px;
+    height: 75px;
+    opacity: 0.6;
+    cursor: pointer;
+}
+.swiper-thumbs .swiper-slide  img{
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.swiper-thumbs .swiper-slide-thumb-active {
+    opacity: 1;
+    border: 2px solid white;
+}

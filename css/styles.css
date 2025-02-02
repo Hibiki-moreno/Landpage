@@ -7,6 +7,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     background: linear-gradient(to bottom right, #3b82f6, #9333ea);
+    background: #02010f;
     color: white;
     font-family: Arial, sans-serif;
     text-align: center;
@@ -42,4 +43,30 @@ p {
 
 .btn:hover {
     background: #e2e8f0;
+}
+
+.btn-secondary {
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: #e2e8f0 1px solid;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #02010f;
+    transition: background ease 0.3s;
+    z-index: 9;
+}
+
+.btn-secondary:hover {
+    background: #e2e8f0;
+}
+
+
+.header{
+    width: 100dvw;
+    height: 100dvh;
+    background: url('../src/images/bg-01.avif') no-repeat center;
+    display: grid;
+    justify-content: center;
+    place-content: center;
 }

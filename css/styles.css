@@ -20,6 +20,7 @@ body {
     color: white;
     font-family: Arial, sans-serif;
     text-align: center;
+    padding-bottom: 25dvh;
 }
 
 h1 {
@@ -147,7 +148,7 @@ p {
 .container{
     background: #000000 !important;
     width: 100dvw;
-    height: 100dvh;
+    height: fit-content;
 }
 
 
@@ -169,6 +170,7 @@ p {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    transition: all ease 0.5s;
 }
 
 .card{
@@ -190,9 +192,33 @@ p {
     margin: 1rem;
 }
 
+.general-info{
+    width: 100dvw;
+    display: grid;
+    margin-top: 2rem;
+    place-content: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.information{
+    width: 50%;
+    text-align: left;
+}
+
+.information-img{
+    width: 100%;
+    height: fit-content;
+    border-radius: 12px;
+}
+
 @media (max-width: 768px) {
     .card{
         width: 80%;
         margin-bottom: 2rem;
+    }
+
+    .information{
+        width: 90%;
     }
 }

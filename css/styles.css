@@ -148,14 +148,6 @@ p {
     background: #000000 !important;
     width: 100dvw;
     height: 100dvh;
-<<<<<<< HEAD
-    background: url('../src/images/bg-01.avif') no-repeat center;
-    display: grid;
-    justify-content: center;
-    place-content: center;
-    background-size: cover;
-=======
->>>>>>> d2ac7a4ef644f83b6f989b451f663ef2b3cc7a60
 }
 
 
@@ -189,4 +181,10 @@ p {
     background: radial-gradient( 
     rgb(17, 23, 71) 0%,  /* Negro puro en la parte inferior */
     rgb(0, 0, 0) 100% );
+}
+
+.service-icon{
+    width: 30%;
+    height: 30%;
+    margin: 1rem;
 }

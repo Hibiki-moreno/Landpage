@@ -1,3 +1,9 @@
+a{
+    color: aliceblue;
+    font-style: none;
+    text-decoration: none;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -61,7 +67,6 @@ p {
     background: #e2e8f0;
 }
 
-
 .header{
     width: 100dvw;
     height: 100dvh;
@@ -69,4 +74,41 @@ p {
     display: grid;
     justify-content: center;
     place-content: center;
+}
+
+.nav{
+    width: 100dvw;
+    height: fit-content;
+    display: flex;
+    position: fixed;
+    flex-wrap: wrap;
+    flex-direction: row;
+    top: 0;
+    margin: 1rem;
+    justify-content: space-around;
+}
+
+.nav-divider{
+    height: fit-content;
+    padding: .2rem .5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Buttons */
+
+.btn-contactme{
+    height: fit-content;
+    background: #3b82f6;
+    border-radius: 15px;
+    border: #e2e8f0 1px solid;
+    padding: 8px 8px;
+    transition: all ease 0.3s;
+}
+
+.btn-contactme:hover{
+    background: #222;
+    border: #3b82f6 1px solid;
+    transition: all ease 0.3s;
 }

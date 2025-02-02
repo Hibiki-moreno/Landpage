@@ -1,3 +1,13 @@
+:root{
+    scroll-behavior: smooth;
+}
+
+a{
+    color: aliceblue;
+    font-style: none;
+    text-decoration: none;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -6,10 +16,11 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient(to bottom right, #3b82f6, #9333ea);
+    background: #000000;
     color: white;
     font-family: Arial, sans-serif;
     text-align: center;
+    padding-bottom: 25dvh;
 }
 
 h1 {
@@ -21,7 +32,72 @@ p {
     font-size: 1.2rem;
     margin-top: 10px;
     opacity: 0;
+    color:#e2e8f0;
 }
+
+.header{
+    width: 100dvw;
+    height: 100dvh;
+    background: url('../src/images/bg-01.avif') no-repeat center;
+    background-size: cover;
+    display: grid;
+    justify-content: center;
+    place-content: center;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    height: 100dvh;
+    background: linear-gradient(to top, 
+        rgba(0, 0, 0, 100%) 0%,  /* Negro puro en la parte inferior */
+        rgba(255, 255, 255, 0) 25%   /* Totalmente transparente en el 60% */
+    );
+    pointer-events: none; /* Evita que interfiera con los elementos debajo */
+}
+
+.nav{
+    width: 100dvw;
+    height: fit-content;
+    display: flex;
+    position: fixed;
+    flex-wrap: wrap;
+    flex-direction: row;
+    top: 0;
+    z-index: 100;
+    margin: 1rem;
+    justify-content: space-around;
+}
+
+.nav-divider{
+    height: fit-content;
+    padding: 1rem 1.5rem;
+    border: #030e1f solid 1px;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    border-radius: 25px 5px;
+    backdrop-filter: blur(20px);
+}
+
+/* Buttons */
+
+.btn-contactme{
+    height: fit-content;
+    background: #0066ff;
+    border-radius: 15px;
+    border: #e2e8f0 1px solid;
+    padding: 8px 8px;
+    transition: all ease 0.3s;
+}
+
+.btn-contactme:hover{
+    background: #222;
+    border: #3b82f6 1px solid;
+    transition: all ease 0.3s;
+}
+
 
 .button-container {
     margin-top: 20px;
@@ -31,8 +107,8 @@ p {
 .btn {
     padding: 12px 24px;
     font-size: 1rem;
-    color: #3b82f6;
-    background: white;
+    color: #000018;
+    background: #ffffff;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -41,5 +117,108 @@ p {
 }
 
 .btn:hover {
-    background: #e2e8f0;
+    color: #ffffff;
+    background: #222;
+    border: #222 1px solid;
+}
+
+.btn-secondary {
+    padding: 12px 24px;
+    color: #e2e8f0;
+    border: #e2e8f0#e2e8f0 1px solid;
+    font-size: 1rem;
+    border-color: #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #02010f;
+    transition: background ease 0.3s;
+    z-index: 9;
+}
+
+.btn-secondary:hover {
+    background: #151735;
+    color: #ffff;
+    border:#02010f 1px solid;
+}
+
+
+
+/* content */
+
+.container{
+    background: #000000 !important;
+    width: 100dvw;
+    height: fit-content;
+}
+
+
+/* component stile */
+
+.text-cursive{
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;   
+}
+
+#description{
+    margin: 0 1rem 0 1rem;
+}
+/* Services */
+
+.card-container{
+    margin-top: 4rem;
+    width: 100dvw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    transition: all ease 0.5s;
+}
+
+.card{
+    width: 20%;
+    padding: 19px;
+    border-radius: 15px;
+    outline: 1px solid transparent;
+    outline-offset: -1px;
+    box-shadow: 0 0 0 2px rgb(21, 29, 70), 0 0 0 3px rgb(32, 32, 32);
+    background: #19142c;
+    background: radial-gradient( 
+    rgb(17, 23, 71) 0%,  /* Negro puro en la parte inferior */
+    rgb(0, 0, 0) 100% );
+}
+
+.service-icon{
+    width: 30%;
+    height: 30%;
+    margin: 1rem;
+}
+
+.general-info{
+    width: 100dvw;
+    display: grid;
+    margin-top: 2rem;
+    place-content: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.information{
+    width: 50%;
+    text-align: left;
+}
+
+.information-img{
+    width: 100%;
+    height: fit-content;
+    border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    .card{
+        width: 80%;
+        margin-bottom: 2rem;
+    }
+
+    .information{
+        width: 90%;
+    }
 }

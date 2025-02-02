@@ -1,3 +1,7 @@
+:root{
+    scroll-behavior: smooth;
+}
+
 a{
     color: aliceblue;
     font-style: none;
@@ -12,8 +16,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient(to bottom right, #3b82f6, #9333ea);
-   
+    background: #000000;
     color: white;
     font-family: Arial, sans-serif;
     text-align: center;
@@ -123,7 +126,6 @@ p {
     border: #e2e8f0#e2e8f0 1px solid;
     font-size: 1rem;
     border-color: #e2e8f0;
-    
     border-radius: 8px;
     cursor: pointer;
     background: #02010f;
@@ -153,4 +155,29 @@ p {
 .text-cursive{
     font-family:'Times New Roman', Times, serif;
     font-style: italic;   
+}
+
+#description{
+    margin: 0 1rem 0 1rem;
+}
+/* Services */
+
+.card-container{
+    margin-top: 4rem;
+    width: 100dvw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card{
+    width: 20%;
+    padding: 19px;
+    border-radius: 15px;
+    outline: 1px solid transparent;
+    outline-offset: -1px;
+    box-shadow: 0 0 0 2px rgb(21, 29, 70), 0 0 0 3px rgb(32, 32, 32);
+    background: #19142c;
+    background: radial-gradient( 
+    rgb(17, 23, 71) 0%,  /* Negro puro en la parte inferior */
+    rgb(0, 0, 0) 100% );
 }

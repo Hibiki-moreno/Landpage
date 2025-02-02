@@ -31,6 +31,7 @@ p {
     font-size: 1.2rem;
     margin-top: 10px;
     opacity: 0;
+    color:#e2e8f0;
 }
 
 .header{
@@ -147,6 +148,14 @@ p {
     background: #000000 !important;
     width: 100dvw;
     height: 100dvh;
+<<<<<<< HEAD
+    background: url('../src/images/bg-01.avif') no-repeat center;
+    display: grid;
+    justify-content: center;
+    place-content: center;
+    background-size: cover;
+=======
+>>>>>>> d2ac7a4ef644f83b6f989b451f663ef2b3cc7a60
 }
 
 

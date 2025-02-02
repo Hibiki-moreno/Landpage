@@ -148,6 +148,14 @@ p {
     background: #000000 !important;
     width: 100dvw;
     height: 100dvh;
+<<<<<<< HEAD
+=======
+    background: url('../src/images/bg-01.avif') no-repeat center;
+    display: grid;
+    justify-content: center;
+    place-content: center;
+    background-size: cover;
+>>>>>>> 0b0325b62615cf8aa9a6d5e3d1d4e3c1a245a79c
 }
 
 

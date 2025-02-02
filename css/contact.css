@@ -6,11 +6,17 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
-    background: #0a0a0a;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #3b82f6, #9333ea);
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
 }
 
 .container {

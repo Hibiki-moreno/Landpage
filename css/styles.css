@@ -13,7 +13,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     background: linear-gradient(to bottom right, #3b82f6, #9333ea);
-    background: #02010f;
+   
     color: white;
     font-family: Arial, sans-serif;
     text-align: center;
@@ -30,6 +30,70 @@ p {
     opacity: 0;
 }
 
+.header{
+    width: 100dvw;
+    height: 100dvh;
+    background: url('../src/images/bg-01.avif') no-repeat center;
+    background-size: cover;
+    display: grid;
+    justify-content: center;
+    place-content: center;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    height: 100dvh;
+    background: linear-gradient(to top, 
+        rgba(0, 0, 0, 100%) 0%,  /* Negro puro en la parte inferior */
+        rgba(255, 255, 255, 0) 25%   /* Totalmente transparente en el 60% */
+    );
+    pointer-events: none; /* Evita que interfiera con los elementos debajo */
+}
+
+.nav{
+    width: 100dvw;
+    height: fit-content;
+    display: flex;
+    position: fixed;
+    flex-wrap: wrap;
+    flex-direction: row;
+    top: 0;
+    z-index: 100;
+    margin: 1rem;
+    justify-content: space-around;
+}
+
+.nav-divider{
+    height: fit-content;
+    padding: 1rem 1.5rem;
+    border: #030e1f solid 1px;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    border-radius: 25px 5px;
+    backdrop-filter: blur(20px);
+}
+
+/* Buttons */
+
+.btn-contactme{
+    height: fit-content;
+    background: #0066ff;
+    border-radius: 15px;
+    border: #e2e8f0 1px solid;
+    padding: 8px 8px;
+    transition: all ease 0.3s;
+}
+
+.btn-contactme:hover{
+    background: #222;
+    border: #3b82f6 1px solid;
+    transition: all ease 0.3s;
+}
+
+
 .button-container {
     margin-top: 20px;
     opacity: 0;
@@ -38,8 +102,8 @@ p {
 .btn {
     padding: 12px 24px;
     font-size: 1rem;
-    color: #3b82f6;
-    background: white;
+    color: #000018;
+    background: #ffffff;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -48,7 +112,9 @@ p {
 }
 
 .btn:hover {
-    background: #e2e8f0;
+    color: #ffffff;
+    background: #222;
+    border: #222 1px solid;
 }
 
 .btn-secondary {
@@ -66,53 +132,25 @@ p {
 }
 
 .btn-secondary:hover {
-    background: #e2e8f0;
-    color: #02010f;
+    background: #151735;
+    color: #ffff;
     border:#02010f 1px solid;
 }
 
-.header{
+
+
+/* content */
+
+.container{
+    background: #000000 !important;
     width: 100dvw;
     height: 100dvh;
-    background: url('../src/images/bg-01.avif') no-repeat center;
-    display: grid;
-    justify-content: center;
-    place-content: center;
 }
 
-.nav{
-    width: 100dvw;
-    height: fit-content;
-    display: flex;
-    position: fixed;
-    flex-wrap: wrap;
-    flex-direction: row;
-    top: 0;
-    margin: 1rem;
-    justify-content: space-around;
-}
 
-.nav-divider{
-    height: fit-content;
-    padding: .2rem .5rem;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
+/* component stile */
 
-/* Buttons */
-
-.btn-contactme{
-    height: fit-content;
-    background: #3b82f6;
-    border-radius: 15px;
-    border: #e2e8f0 1px solid;
-    padding: 8px 8px;
-    transition: all ease 0.3s;
-}
-
-.btn-contactme:hover{
-    background: #222;
-    border: #3b82f6 1px solid;
-    transition: all ease 0.3s;
+.text-cursive{
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;   
 }
